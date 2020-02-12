@@ -17,5 +17,24 @@ namespace DownloaderDemo
         {
             InitializeComponent();
         }
+
+        async void DownloadJsonOne(string url)
+        {
+            HttpRequest request = url.CreateHttpRequest(HttpRequestMethod.Get);
+            HttpResponse response = await HttpResources.Current.SendAsync(request);
+            _ = 0;
+        }
+
+        async void DownloadJsonTwo(string url)
+        {
+            HttpRequest request = HttpRequest.Create(url, HttpRequestMethod.Get);
+            HttpResponse response = await HttpResources.Current.SendAsync(request);
+            _ = 0;
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+        }
     }
 }
