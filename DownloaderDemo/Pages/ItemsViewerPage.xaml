@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DownloaderDemo.Pages.ItemsViewerPage" BackgroundColor="#f2f2f7">
+    <ContentPage.Content>
+        <Grid>
+            <CollectionView ItemsSource="{Binding Photos}" SelectionMode="Single">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Span="1" Orientation="Vertical" VerticalItemSpacing="1" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal" Padding="20,10" BackgroundColor="#fff" HeightRequest="80">
+                            <Frame HasShadow="false" Padding="0" CornerRadius="8">
+                                <Image Source="{Binding Url}" Aspect="AspectFill" BackgroundColor="#000" WidthRequest="80" />
+                            </Frame>
+                            <StackLayout Spacing="0">
+                                <Label Text="{Binding Title}" TextColor="#000" FontSize="15" />
+                                <Label Text="{Binding Url}" TextColor="#888" FontSize="12" />
+                            </StackLayout>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <StackLayout BackgroundColor="#f2f2f7" IsVisible="{Binding IsBusy}">
+                <ActivityIndicator IsRunning="{Binding IsBusy}" VerticalOptions="EndAndExpand" />
+                <Label Text="Cargando información" TextColor="#000" FontSize="15" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

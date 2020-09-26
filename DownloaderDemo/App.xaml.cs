@@ -1,6 +1,6 @@
-﻿using System;
+﻿using DownloaderDemo.Pages;
+using DownloaderDemo.ViewModels;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace DownloaderDemo
 {
@@ -9,22 +9,7 @@ namespace DownloaderDemo
         public App()
         {
             InitializeComponent();
-            MainPage = new MainPage();
-        }
-
-        protected override void OnStart()
-        {
-            base.OnStart();
-        }
-
-        protected override void OnSleep()
-        {
-            base.OnSleep();
-        }
-
-        protected override void OnResume()
-        {
-            base.OnResume();
+            MainPage = new ItemsViewerPage(new ItemsViewerViewModel());
         }
     }
 }

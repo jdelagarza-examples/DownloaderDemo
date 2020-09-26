@@ -16,7 +16,11 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Managers\" />
     <Folder Include="Apis\" />
+    <Folder Include="Commons\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Pages\" />
+    <Folder Include="Properties\" />
+    <Folder Include="Apis\Responses\" />
   </ItemGroup>
 </Project>
